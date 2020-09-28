@@ -13,3 +13,9 @@
 <div class="">
   <?php echo $post['content']; ?>
 </div>
+
+<!-- TAG LIST -->
+<?php
+  include_once '../app/controleurs/tagsControleur.php';
+  \App\Controleurs\TagsControleur\indexByPostIdAction($connexion, $post['id']);
+?>

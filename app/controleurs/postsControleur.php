@@ -36,6 +36,4 @@ $title = $post['title'];
 ob_start();
   include '../app/vues/posts/show.php';
 $content = ob_get_clean();
-
-
 }
