@@ -5,7 +5,7 @@
 */
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <?php include '../app/vues/template/partials/_head.php' ?>
   </head>
