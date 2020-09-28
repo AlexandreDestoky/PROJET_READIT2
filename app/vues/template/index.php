@@ -4,16 +4,23 @@
   TEMPLATE PRINCIPAL
 */
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=">
-  <title>ESSAI READ IT</title>
-</head>
-<body>
-  <h1>Template principal</h1>
-  <?php var_dump($connexion); ?>
-</body>
+  <head>
+    <?php include '../app/vues/template/partials/_head.php' ?>
+  </head>
+
+  <body>
+    <?php include '../app/vues/template/partials/_nav.php' ?>
+
+    <?php include '../app/vues/template/partials/_hero.php' ?>
+
+    <?php include '../app/vues/template/partials/_main.php' ?>
+
+    <?php include '../app/vues/template/partials/_footer.php' ?>
+
+    <?php include '../app/vues/template/partials/_loader.php' ?>
+
+    <?php include '../app/vues/template/partials/_scripts.php' ?>
+  </body>
 </html>

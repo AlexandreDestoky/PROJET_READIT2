@@ -5,8 +5,8 @@
 */
 
 // ZONES DYNAMIQUES
-  $content="";
-  $title="";
+  $content="essai";
+  $title="Free Bootstrap 4 Template by Colorlib";
 
 // PARAMETRES DE CONNEXION
   define('HOSTNAME','localhost:3306');
