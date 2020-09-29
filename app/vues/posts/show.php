@@ -2,7 +2,7 @@
 /*
   ../app/vues/posts/show.php
   Variables disponibles:
-   $post :ARRAY(id,title,created_at,image,content,author_id,categories_id)
+   -$post :ARRAY(id,title,created_at,image,content,author_id,categories_id)
 */
 ?>
 <p class="mb-5">
@@ -18,4 +18,9 @@
 <?php
   include_once '../app/controleurs/tagsControleur.php';
   \App\Controleurs\TagsControleur\indexByPostIdAction($connexion, $post['id']);
+?>
+
+<!-- AUTHOR DETAILS -->
+<?php
+  include_once '../app/vues/authors/show.php';
 ?>
