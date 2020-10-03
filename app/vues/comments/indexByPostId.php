@@ -21,4 +21,6 @@
     </li>
   <?php endforeach; ?>
   </ul>
+
+  <?php include '../app/vues/comments/_addForm.php'; ?>
 </div>
