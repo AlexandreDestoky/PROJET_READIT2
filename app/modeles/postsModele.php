@@ -18,6 +18,27 @@ function findAll(\PDO $connexion) :array {
   return $rs-> fetchAll(\PDO::FETCH_ASSOC);
 }
 
+
+/**
+ * [findAllRecent description]
+ * @param  PDO   $connexion [description]
+ * @return array            [description]
+ */
+// FindAllRecent
+function findAllRecents(\PDO $connexion) :array {
+  $sql = "SELECT p.id, p.title, p.created_at, p.image,
+                a.firstname,a.lastname, COUNT(c.id) AS nbrComments
+          FROM posts p
+          JOIN authors a ON p.author_id = a.id
+          LEFT JOIN comments c ON c.post_id = p.id
+          GROUP BY p.id
+          ORDER BY created_at DESC
+          LIMIT 3;";
+  $rs = $connexion -> query($sql);
+  return $rs-> fetchAll(\PDO::FETCH_ASSOC);
+}
+
+
 /**
  * [findOneById description]
  * @param  PDO   $connexion [description]
