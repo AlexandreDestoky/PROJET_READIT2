@@ -22,3 +22,20 @@ function findAllByPostId(\PDO $connexion, int $postId) :array {
   $rs->execute();
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
+
+
+/**
+ * [findAll description]
+ * @param  PDO   $connexion [description]
+ * @return array            [description]
+ */
+// FindAll
+function findAll(\PDO $connexion) :array {
+  $sql = "SELECT *, COUNT(pht.post_id) AS nbrPost
+          FROM tags t
+          LEFT JOIN posts_has_tags pht ON t.id = pht.tag_id
+          GROUP BY t.id
+          ORDER BY nbrPost DESC;";
+  $rs = $connexion -> query($sql);
+  return $rs-> fetchAll(\PDO::FETCH_ASSOC);
+}
