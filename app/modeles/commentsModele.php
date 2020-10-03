@@ -1,8 +1,8 @@
 <?php
 /*
-  ../app/modeles/tagsModele.php
+  ../app/modeles/commentsModele.php
 */
-namespace App\Modeles\TagsModele;
+namespace App\Modeles\CommentsModele;
 
 
 /**
@@ -13,10 +13,9 @@ namespace App\Modeles\TagsModele;
  */
 function findAllByPostId(\PDO $connexion, int $postId) :array {
   $sql = "SELECT *
-          FROM tags t
-          JOIN posts_has_tags pht ON t.id = pht.tag_id
-          WHERE pht.post_id = :postId
-          ORDER BY t.name ASC;";
+          FROM comments
+          WHERE post_id = :postId
+          ORDER BY created_at DESC;";
   $rs = $connexion->prepare($sql);
   $rs->bindValue(':postId',$postId, \PDO::PARAM_INT);
   $rs->execute();
