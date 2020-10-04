@@ -1,16 +1,22 @@
+<?php
+/*
+  ../app/vues/comments/_addForm.php
+*/
+?>
+
 <div class="comment-form-wrap pt-5">
   <h3 class="mb-5">Leave a comment</h3>
-  <form action="#" class="p-5 bg-light" method="post">
+  <form action="?comments=add" class="p-5 bg-light" method="post">
     <div class="form-group">
-      <label for="name">Name *</label>
-      <input type="text" class="form-control" id="name">
+      <label for="pseudo">Pseudo *</label>
+      <input type="text" class="form-control" id="pseudo" name="pseudo">
     </div>
     <div class="form-group">
-      <label for="message">Message</label>
-      <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+      <label for="content">Message</label>
+      <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
     </div>
     <div class="form-group">
-      <input type="hidden" name="postId" value="4" />
+      <input type="hidden" name="post_id" value="<?php echo intval($_GET['postId']) ?>" />
       <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
     </div>
 

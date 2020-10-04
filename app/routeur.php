@@ -4,14 +4,21 @@
   ROUTEUR PRINCIPAL
 */
 
+// AJOUT D'un COMMENTAIRE
+// PATTERN : ?comments=add
+// CTRL : commentsControleur
+// ACTION : store
+  if(isset($_GET['comments']) and $_GET['comments'] == 'add'):
+    include_once '../app/controleurs/commentsControleur.php';
+    \App\Controleurs\CommentsControleur\storeAction($connexion);
 
 // PAGE CONTACT
 // PATTERN : ?contact
 // CTRL :
 // ACTION :
-  if(isset($_GET['contact'])):
+  elseif(isset($_GET['contact'])):
     ob_start();
-    include_once '../app/vues/template/partials/_contact.php';
+      include_once '../app/vues/template/partials/_contact.php';
     $content = ob_get_clean();
     $title = "contact";
 
